@@ -46,3 +46,5 @@ git flow init
 git push --set-upstream origin develop
 #+END_SRC
 
+在 *IntelliJ IDEA* 中，可以安装[[https://github.com/rieonke/idea-git-flow][GitFlow]]插件，可以帮助我们快速 *start* 和 *finish* 各种分支。
+
