@@ -26,6 +26,8 @@ cp ~/dotfiles/.gitignore .
 git init
 git add README.org
 git commit -m "README.org"
+git add .gitignore
+git commit -m ".gitignore"
 git add *
 git commit -m "cloud2020"
 git remote add origin https://your-git-server-domain.com/xxx/cloud2020.git
