@@ -1,4 +1,5 @@
 
+
 #+TITLE: cloud2020
 
 * 新建聚合类总工程父项目
@@ -39,4 +40,9 @@ git push -u origin master
 git flow init
 #+END_SRC
 
-执行命名后，在随后弹出的各种询问中直接回车选择默认。
+执行命名后，在随后弹出的各种询问中直接回车选择默认。执行成功后，会自动创建 *develop* git分支，并且已经自动切换到 *develop* 分支，这时候，可以执行命令将 *develop* 分支推送到git服务器。
+
+#+BEGIN_SRC bash
+git push --set-upstream origin develop
+#+END_SRC
+
