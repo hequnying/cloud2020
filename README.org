@@ -3,10 +3,10 @@
 
 * 新建聚合类总工程父项目
 
-1. 在IntelliJ IDEA中新建项目，在弹出的**New Project**对话框中，在左侧选择**Maven**，在右侧**Project SDK**中选择**1.8**，勾选**Create from archetype**并选择**org.apche.maven.archetypes:maven-archetype-site**，点击**下一步**。
-2. 填写**GroupId**: **com.becheer.springcloud*，填写**ArtifactId**: **cloud2020**，点击**下一步**。
-3. 选择**Maven home directory**目录，记得不要选择默认自带的Maven版本，选择自己安装的Maven版本，点击**下一步**。
-4. 确认**Project name**和**Project location**无误后，可以点击**完成**。
+1. 在IntelliJ IDEA中新建项目，在弹出的 *New Project* 对话框中，在左侧选择 *Maven* ，在右侧 *Project SDK* 中选择 *1.8* ，勾选 *Create from archetype* 并选择 *org.apche.maven.archetypes:maven-archetype-site* ，点击 *下一步* 。
+2. 填写 *GroupId*: *com.becheer.springcloud*，填写*ArtifactId*: *cloud2020* ，点击 *下一步* 。
+3. 选择 *Maven home directory* 目录，记得不要选择默认自带的Maven版本，选择自己安装的Maven版本，点击 *下一步* 。
+4. 确认 *Project name* 和 *Project location* 无误后，可以点击 *完成* 。
    
 * 复制.gitignore文件
 
@@ -30,3 +30,13 @@ git commit -m "cloud2020"
 git remote add origin https://your-git-server-domain.com/xxx/cloud2020.git
 git push -u origin master
 #+END_SRC
+* git-flow
+
+[[https://github.com/nvie/gitflow][git-flow]]是一个很好的git分支管理插件，相关可以介绍和安装方法，可以在其[[https://github.com/nvie/gitflow][git-flow的github项目]]中了解和学习。
+进入项目目录后，执行命令:
+
+#+BEGIN_SRC bash
+git flow init
+#+END_SRC
+
+执行命名后，在随后弹出的各种询问中直接回车选择默认。
