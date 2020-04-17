@@ -52,7 +52,7 @@ git push --set-upstream origin develop
 
 * 整理聚合类总工程项目的目录和文件
 
-1. 修改pom.xml文件
+    1. 修改pom.xml文件
 
 使用gitflow初始化处理后，切换到develop分支。为后续添加子项目模块、统一管理项目依赖包等，对pom.xml文件做以下处理:
 
@@ -60,7 +60,7 @@ git push --set-upstream origin develop
     + 增加packaging属性, 设置值为pom;
     + 增加properties属性，主要用于统一管理整个项目各个依赖包的版本号;
     + 增加dependencyManagement属性，主要用于声明整个项目依赖的依赖包，明确依赖包的版本号，在子项目模块中，可以不用声明依赖包也能继承该聚合类总工程项目中声明的依赖包;
- 
+
 根据当前(2020年4月)Spring Boot和Spring Cloud框架各组件项目代码的维护情况，初步确定使用2.2.2版本的Spring Boot，使用Hoxton.SR1版本的Spring Cloud。
 
 最终，聚合类总工程项目的pom.xml文件内容如下:
@@ -171,4 +171,12 @@ git push --set-upstream origin develop
 
 #+END_SRC
 
-2. 删除聚合类总工程项目的src目录、target目录
+  2. 删除聚合类总工程项目的src目录、target目录
+
+* 对.idea目录的gitignore处理
+
+  1. 关注[[https://github.com/github/gitignore][github/gitignore]]项目关于[[https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore][JetBrains.gitignore]]的更新，获取最新的.gitignore列表。
+  2. 对于 *.idea/dataSources* 目录或文件，一定要加入到忽略列表中。因为该文件记录了数据库信息。详见: [[https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems][How to manage projects under Version Control Systems]]。
+  3. 如果在IntelliJ IDEA中启用了自动导入功能 *Enable Auto-Import* ，那么，参照[[https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore][JetBrains.gitignore]]的 *# Gradle and Maven with auto-import* 的建议，启用这一部的忽略文件列表。
+  4. 增加 *# User-specific configurations*，将一些encoding.xml、misc.xml和markdown-doclet.xml等4个文件加入忽略列表中。以后还有其他的文件出现，也可以暂时添加到这一部分的忽略列表中。
+  5. 注意老版本的gitlab-ce中的gitignore模板可能不是最新的，需要关注[[https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore][JetBrains.gitignore]]的最新更新，或留意[[https://www.jetbrains.com/][https://www.jetbrains.com/]]官网。
